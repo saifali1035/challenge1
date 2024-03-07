@@ -39,7 +39,7 @@ class MyHandler(BaseHTTPRequestHandler):
         self.wfile.write(response.encode('utf-8'))
 
 def start_server():
-    host = 'localhost'
+    host = '0.0.0.0'  #needed to set 0.0.0.0 instead of localhost incase using default netork
     port = 9098
     server_address = (host, port)
     httpd = HTTPServer(server_address, MyHandler)
